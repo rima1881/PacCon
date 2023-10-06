@@ -17,6 +17,7 @@ public:
 
     //Square
     virtual void Draw();
+    virtual bool hasSpace();
 
 };
 

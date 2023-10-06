@@ -7,10 +7,11 @@ class Map
 private:
     
     Square** data;
+    int size;
 
 public:
 
-    Map(/* args */);
+    Map(int size);
 
     void Draw();
 
