@@ -9,6 +9,14 @@ private:
     Object *content;
 
 public:
-    Room(/* args */);
+
+    Room(Object *c);
+
+    //Space
+    virtual Object* getContent();
+
+    //Square
+    virtual void Draw();
+
 };
 

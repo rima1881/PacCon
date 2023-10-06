@@ -10,7 +10,7 @@ class Space : public Square
 private:
     /* data */
 public:
-    virtual Object getContent() = 0;
+    virtual Object* getContent() = 0;
 };
 
 #endif

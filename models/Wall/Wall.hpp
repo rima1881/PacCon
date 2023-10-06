@@ -1,8 +1,19 @@
-class Wall
+#ifndef WALL_H
+#define WALL_H
+#include "../interfaces/Square.hpp"
+
+
+class Wall : public Square
 {
-private:
-    /* data */
 public:
-    Wall(/* args */);
-    ~Wall();
+
+    Wall();
+
+
+    //Square
+    virtual void Draw();
+
+
 };
+
+#endif
