@@ -18,7 +18,7 @@ class Player : public Mortal , public Moving {
 
 
         //Moving
-        virtual void Move();
+        virtual void Move(Direction d);
 
 
     private:

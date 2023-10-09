@@ -1,4 +1,5 @@
 #include "./Player.hpp"
+#include "../UserInput/UserInput.hpp"
 
 Player::Player(std::string name){
     this -> name = name;
@@ -8,14 +9,23 @@ Player::Player(std::string name){
 
 void Player::Controll(){
 
-    char userInput;
+    char input;
 
     while (true)
     {
-        std::cin >> userInput;
+        std::cin >> input;
         
+        UserInput uInput(input);
+
+        Move(uInput.getDirction());
+        
+
     }
     
+
+}
+
+void Player::Move(Direction d){
 
 }
 

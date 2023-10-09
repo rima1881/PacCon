@@ -8,6 +8,8 @@ void Game::NewGame(){
 
 void Game::Start(){
 
+
+
     map -> Draw();
 
 }
