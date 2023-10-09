@@ -10,7 +10,8 @@ class Player : public Mortal , public Moving {
     public:
 
         Player(std::string name);
-        ~Player();
+
+        void Controll();
 
         //killable
         virtual void GetDamage(int d);
@@ -18,6 +19,7 @@ class Player : public Mortal , public Moving {
 
         //Moving
         virtual void Move();
+
 
     private:
 
