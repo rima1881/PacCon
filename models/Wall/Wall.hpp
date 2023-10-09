@@ -7,7 +7,7 @@ class Wall : public Square
 {
 public:
 
-    Wall();
+    Wall(){};
 
 
     //Square

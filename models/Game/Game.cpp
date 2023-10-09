@@ -1,10 +1,13 @@
 #include "./Game.hpp"
 
-void Game::newGame(){
+void Game::NewGame(){
 
-    map = new Map();
+    map = new Map(20);
 
+}
 
-    
+void Game::Start(){
+
+    map -> Draw();
 
 }

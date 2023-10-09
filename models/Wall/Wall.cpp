@@ -2,6 +2,8 @@
 #include <iostream>
 
 
+
+
 void Wall::Draw(){
 
     std::cout<<"#";

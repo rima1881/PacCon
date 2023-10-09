@@ -13,6 +13,10 @@ int main(){
 
     Game game;
 
+    game.NewGame();
+
+    game.Start();
+
 
     return 0;
 }

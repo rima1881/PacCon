@@ -11,9 +11,9 @@ public:
 
     static bool Load(std::string fileAddress);
     void Save();
-    void newGame();
+    void NewGame();
+    void Start();
 
-    ~Game();
 };
 
 
