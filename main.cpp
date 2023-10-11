@@ -15,6 +15,8 @@ int main(){
 
     game.NewGame("amir");
 
+    game.LoadMap("../../db/map1.txt");
+
     game.Start();
 
 

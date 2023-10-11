@@ -10,10 +10,11 @@ private:
 
     Map* map;
     Player* player;
+    Object** objects;
 
 public:
 
-    static bool Load(std::string fileAddress);
+    bool LoadMap(std::string fileAddress);
     void Save();
     void NewGame(std::string name);
     void Start();

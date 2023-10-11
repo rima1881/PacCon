@@ -7,6 +7,13 @@ class Room : public Space
 private:
 
     Object *content;
+    
+    struct Position
+    {
+        int x;
+        int y;
+    } position;
+    
 
 public:
 
