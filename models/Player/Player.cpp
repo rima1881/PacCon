@@ -18,26 +18,37 @@ void Player::Controll(){
         std::cin >> input;
         
         UserInput uInput(input);
-        
-        Move(uInput.getDirction());
-        
+                
 
     }
     
 
 }
 
-void Player::Move(Direction d){
+void Player::Move(Direction d,bool (*checkSquare(int x,int y))){
 
-        
-    if(d == Direction::north)
-        posY --;
-    else if(d == Direction::west)
-        posX --;
-    else if(d == Direction::east)
-        posX ++;
-    else if(d == Direction::south)
-        posY ++;
+    int nextRoomX = posX;
+    int nextRoomY = posY;
+
+    switch (d)
+    {
+    case Direction::north:
+        nextRoomY--;
+        break;
+    case Direction::south:
+        nextRoomY++;
+        break;
+    case Direction::west:
+        nextRoomX--;
+        break;
+    case Direction::east:
+        nextRoomX++;
+    }
+
+    if(checkSquare(nextRoomX,nextRoomY)){
+        posX = nextRoomX;
+        posY = nextRoomY;
+    }
 
 
 }

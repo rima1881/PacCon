@@ -12,12 +12,15 @@ public:
     static Map map;
     static Player player;
 
+    static bool CheckMove(int x,int y);
+
     static bool LoadMap(std::string fileAddress);
     static void Save();
     static void NewGame(std::string name);
     static void Start();
     static void Render();
     static void Interact();
+
 
 
 };

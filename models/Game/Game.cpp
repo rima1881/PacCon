@@ -84,3 +84,9 @@ void Game::Interact(){
     }
 
 }
+
+bool Game::CheckMove(int x,int y){
+
+    return Game::map[x][y] -> hasSpace();
+
+}

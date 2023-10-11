@@ -28,3 +28,9 @@ void Map::Draw(){
     }
 
 }
+
+std::vector<Square *>& Map::operator[](int index){
+
+    return data[index];
+
+}

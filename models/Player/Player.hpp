@@ -21,7 +21,7 @@ class Player : public Mortal , public Moving {
         virtual int getLife();
 
         //Moving
-        virtual void Move(Direction d);
+        virtual void Move(Direction d,bool (*checkSquare(int i,int x)));
         virtual int getX();
         virtual int getY();
 

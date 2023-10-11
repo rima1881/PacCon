@@ -5,7 +5,7 @@
 
 class Moving : public Object{
     public:
-        virtual void Move(Direction d) = 0;
+        virtual void Move(Direction d, bool (*checkSquare(int x,int y))) = 0;
         virtual int getX() = 0;
         virtual int getY() = 0;
 };

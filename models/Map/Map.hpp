@@ -17,6 +17,9 @@ public:
 
     void SetData(std::vector<std::vector<Square *>> initialMap);
 
+    std::vector<Square *>& operator[](int);
+
+
     void Draw();
 
 
