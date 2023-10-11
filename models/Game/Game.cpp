@@ -5,10 +5,14 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
+#include<windows.h>
+
+Player Game::player;
+Map Game::map;
 
 void Game::NewGame(std::string name){
 
-    this -> player = new Player(name);
+    Game::player.setName(name);
 
 }
 
@@ -24,13 +28,10 @@ bool Game::LoadMap(std::string fileAddress){
     std::vector<std::vector<Square *>> loadedMap;
 
     {
-        std::cout << "fuck me";
 
 
         while (getline(mapFile,line)){
 
-            std::cout << "fuck you";
-            std::cout << line;
             std::vector<Square *> row;
 
             for(char c : line)
@@ -44,9 +45,8 @@ bool Game::LoadMap(std::string fileAddress){
         }
     }
 
-    std::cout << "ninini";
 
-    this -> map = new Map(loadedMap);
+    Game::map.SetData(loadedMap);
 
 
     return true;
@@ -67,13 +67,20 @@ void Game::Start(){
 
 void Game::Render(){
 
-    map -> Draw();
+    system("cls");
+    Game::map.Draw();
+
 
 
 }
 
 void Game::Interact(){
 
-
+    char a;
+    std::cin >> a;
+    while(a != '\n'){
+        std::cout << a;
+        std::cin >> a;
+    }
 
 }

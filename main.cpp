@@ -11,13 +11,12 @@ int main(){
     cout << "************************************************\n";
 
 
-    Game game;
 
-    game.NewGame("amir");
+    Game::NewGame("amir");
 
-    game.LoadMap("../../db/map1.txt");
+    Game::LoadMap("./db/map1.txt");
 
-    game.Start();
+    Game::Start();
 
 
     return 0;

@@ -1,10 +1,12 @@
 #include "./Player.hpp"
 #include "../UserInput/UserInput.hpp"
 
-Player::Player(std::string name){
-    this -> name = name;
+Player::Player(){
 }
 
+void Player::setName(std::string name){
+    this -> name = name;
+}
 
 
 void Player::Controll(){
@@ -27,6 +29,17 @@ void Player::Controll(){
 
 void Player::Move(Direction d){
 
+        
+    if(d == Direction::north)
+        posY --;
+    else if(d == Direction::west)
+        posX --;
+    else if(d == Direction::east)
+        posX ++;
+    else if(d == Direction::south)
+        posY ++;
+
+
 }
 
 void Player::Die(){
@@ -44,6 +57,12 @@ void Player::GetDamage(){
     if(this -> life < 1)
         Player::Die();
 
+}
+int Player::getX(){
+    return this -> posX;
+}
+int Player::getY(){
+    return this -> posY;
 }
 
 int Player::getLife(){

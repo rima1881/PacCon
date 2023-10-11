@@ -3,13 +3,19 @@
 #include "../Room/Room.hpp"
 #include <iostream>
 
-
+Map::Map(){ }
 
 Map::Map(std::vector<std::vector<Square *>> initialMap){
 
     data = initialMap;
 
 }
+
+
+void Map::SetData(std::vector<std::vector<Square *>> initialMap){
+    data = initialMap;
+}
+
 
 void Map::Draw(){ 
 

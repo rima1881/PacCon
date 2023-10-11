@@ -8,10 +8,10 @@ class Player : public Mortal , public Moving {
 
     public:
 
-        Player(std::string name);
-
+        Player();
 
         std::string getName();
+        void setName(std::string name);
 
         void Controll();
 
@@ -22,17 +22,20 @@ class Player : public Mortal , public Moving {
 
         //Moving
         virtual void Move(Direction d);
-
+        virtual int getX();
+        virtual int getY();
 
         //Object
         virtual void Draw();
+
 
     private:
 
         std::string name;
         int life;
 
-
+        int posX;
+        int posY;
 
 };
 

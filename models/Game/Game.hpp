@@ -6,20 +6,18 @@
 
 class Game
 {
-private:
-
-    Map* map;
-    Player* player;
-    Object** objects;
-
 public:
 
-    bool LoadMap(std::string fileAddress);
-    void Save();
-    void NewGame(std::string name);
-    void Start();
-    void Render();
-    void Interact();
+    
+    static Map map;
+    static Player player;
+
+    static bool LoadMap(std::string fileAddress);
+    static void Save();
+    static void NewGame(std::string name);
+    static void Start();
+    static void Render();
+    static void Interact();
 
 
 };

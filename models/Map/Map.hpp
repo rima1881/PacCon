@@ -13,6 +13,9 @@ private:
 public:
 
     Map(std::vector<std::vector<Square *>> initialMap);
+    Map();
+
+    void SetData(std::vector<std::vector<Square *>> initialMap);
 
     void Draw();
 
