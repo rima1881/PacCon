@@ -13,7 +13,7 @@ int main(){
 
     Game game;
 
-    game.NewGame();
+    game.NewGame("amir");
 
     game.Start();
 

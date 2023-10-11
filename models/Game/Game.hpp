@@ -9,14 +9,17 @@ class Game
 private:
 
     Map* map;
-    Player* Player;
+    Player* player;
 
 public:
 
     static bool Load(std::string fileAddress);
     void Save();
-    void NewGame();
+    void NewGame(std::string name);
     void Start();
+    void Render();
+    void Interact();
+
 
 };
 

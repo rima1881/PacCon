@@ -2,11 +2,12 @@
 #include "../Wall/Wall.hpp"
 #include "../Room/Room.hpp"
 #include <iostream>
-#include <stdlib.h> 
 
 
 
 Map::Map(int size){
+
+    this -> size = size * (size + 1);
 
     data = new Square* [size * ( size + 1 )];
 
@@ -24,22 +25,11 @@ Map::Map(int size){
     for(int i = size*size;i<(size+1)*size - 1;i++)
         data[i] = new Wall();
 
-    
-
-    for(int i=0;i<(size+1)*size;i++)
-        if( data[i] == nullptr)
-            std::cout << "\n";
-        else
-            data[i] -> Draw();
 
 
 }
 
-void Map::Draw(){
-
-
-    system("cls"); 
- 
+void Map::Draw(){ 
 
 
     for(int i=0;i<size;i++)

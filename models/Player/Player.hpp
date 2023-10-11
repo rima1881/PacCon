@@ -1,7 +1,6 @@
 #ifndef Player_H
 #define Player_H
 #include <iostream>
-#include "../enums/icons.hpp"
 #include "../interfaces/Mortal.hpp"
 #include "../interfaces/Moving.hpp"
 
@@ -11,20 +10,26 @@ class Player : public Mortal , public Moving {
 
         Player(std::string name);
 
+
+        std::string getName();
+
         void Controll();
 
-        //killable
-        virtual void GetDamage(int d);
-
+        //Mortal
+        virtual void GetDamage();
+        virtual void Die();
+        virtual int getLife();
 
         //Moving
         virtual void Move(Direction d);
 
 
+        //Object
+        virtual void Draw();
+
     private:
 
         std::string name;
-        Icon icon;
         int life;
 
 

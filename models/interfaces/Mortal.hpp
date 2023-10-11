@@ -8,8 +8,8 @@ class Mortal : public Object
 private:
     /* data */
 public:
-    virtual void getLife() = 0;
-    virtual void GetDamage(int d) = 0;
+    virtual int getLife() = 0;
+    virtual void GetDamage() = 0;
     virtual void Die() = 0;
 };
 
