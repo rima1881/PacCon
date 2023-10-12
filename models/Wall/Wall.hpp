@@ -1,7 +1,7 @@
 #ifndef WALL_H
 #define WALL_H
 #include "../interfaces/Square.hpp"
-
+#include "../interfaces/Object.hpp"
 
 class Wall : public Square
 {
@@ -13,7 +13,8 @@ public:
     //Square
     virtual void Draw();
     virtual bool hasSpace();
-
+    virtual Object* getContent();
+    virtual void setContent(Object* obj);
 
 };
 

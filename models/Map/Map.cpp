@@ -34,3 +34,12 @@ std::vector<Square *>& Map::operator[](int index){
     return data[index];
 
 }
+
+Square*& Map::operator[](Location loc){
+
+    int x = loc.getX();
+    int y = loc.getY();
+
+    return data[x][y];
+
+}

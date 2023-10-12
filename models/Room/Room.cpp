@@ -26,3 +26,7 @@ bool Room::hasSpace(){
 Object* Room::getContent(){
     return this -> content;
 }
+
+void Room::setContent(Object* obj){
+    this -> content = obj;
+}

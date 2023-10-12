@@ -1,8 +1,8 @@
-#include "../interfaces/Space.hpp"
+#include "../interfaces/Square.hpp"
 #include "../interfaces/Object.hpp"
 
 
-class Room : public Space
+class Room : public Square
 {
 private:
 
@@ -21,6 +21,7 @@ public:
 
     //Space
     virtual Object* getContent();
+    virtual void setContent(Object* obj);
 
     //Square
     virtual void Draw();

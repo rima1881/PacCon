@@ -2,6 +2,7 @@
 #include<string>
 #include "../Room/Room.hpp"
 #include "../Wall/Wall.hpp"
+#include "../UserInput/UserInput.hpp"
 #include <iostream>
 #include <fstream>
 #include <vector>
@@ -76,17 +77,35 @@ void Game::Render(){
 
 void Game::Interact(){
 
-    char a;
-    std::cin >> a;
-    while(a != '\n'){
-        std::cout << a;
-        std::cin >> a;
+    char input;
+
+    while (true)
+    {
+        std::cin >> input;
+        
+        UserInput uInput(input);
+
+        Game::player.Move(uInput.getDirction());
+
     }
 
 }
 
-bool Game::CheckMove(int x,int y){
+bool Game::MoveAttempt(Location Loc,Direction d){
 
-    return Game::map[x][y] -> hasSpace();
+    Location destination = Loc.Destination(d);
+
+    if(map[destination] -> hasSpace()){
+
+        Object* obj = map[Loc] -> getContent();
+
+        map[destination] -> setContent(obj);
+
+        map[Loc] -> setContent(nullptr);
+
+        return true;
+    }
+
+    return false;
 
 }

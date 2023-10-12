@@ -12,7 +12,7 @@ public:
     static Map map;
     static Player player;
 
-    static bool CheckMove(int x,int y);
+    static bool MoveAttempt(Location Loc,Direction d);
 
     static bool LoadMap(std::string fileAddress);
     static void Save();
