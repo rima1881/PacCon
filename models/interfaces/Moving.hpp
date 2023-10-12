@@ -3,7 +3,7 @@
 #include "../enums/Direction.hpp"
 #include "./Object.hpp"
 
-class Moving : public Object{
+class Moving : virtual public Object{
     public:
         virtual void Move(Direction d) = 0;
 };

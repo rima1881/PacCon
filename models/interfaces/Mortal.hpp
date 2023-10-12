@@ -3,7 +3,7 @@
 
 #include "./Object.hpp"
 
-class Mortal : public Object
+class Mortal : virtual public Object
 {
 private:
     /* data */

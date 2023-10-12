@@ -13,8 +13,11 @@ void Player::setName(std::string name){
 
 void Player::Move(Direction d){
 
-    if(Game::MoveAttempt(location,d))
+
+    if(Game::MoveAttempt(location,d)){
+        std::cout << "\n\nI am moving\n\n";
         location = location.Destination(d);
+    }
 
 }
 
@@ -40,9 +43,21 @@ int Player::getLife(){
 }
 
 void Player::Draw(){
-    std::cout << "\033[1;33mC\033[0m\n";
+    std::cout << "\033[1;33mC\033[0m";
 }
 
 Location Player::getLocation(){
     return this -> location;
+}
+
+void Player::setLocation(int x,int y){
+
+
+    this -> location.setX(x);
+    this -> location.setY(y);
+
+}
+
+void Player::setLocation(Location loc){
+    this -> location = loc;
 }

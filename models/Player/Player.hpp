@@ -3,6 +3,7 @@
 #include <iostream>
 #include "../interfaces/Mortal.hpp"
 #include "../interfaces/Moving.hpp"
+#include "../interfaces/Object.hpp"
 #include "../Location/Location.hpp"
 
 class Player : public Mortal , public Moving {
@@ -13,7 +14,7 @@ class Player : public Mortal , public Moving {
 
         std::string getName();
         void setName(std::string name);
-        
+
         //Mortal
         virtual void GetDamage();
         virtual void Die();
@@ -25,6 +26,8 @@ class Player : public Mortal , public Moving {
         //Object
         virtual void Draw();
         virtual Location getLocation();
+        virtual void setLocation(int x,int y);
+        virtual void setLocation(Location loc);
 
 
     private:

@@ -1,3 +1,6 @@
+#ifndef LOCATION_H
+#define LOCATION_H
+
 #include "../enums/Direction.hpp"
 class Location
 {
@@ -16,6 +19,10 @@ public:
     Location Destination(Direction dir);
     int getX();
     int getY();
+    void setX(int x);
+    void setY(int y);
     Cordinates getCordinates();
 
 };
+
+#endif

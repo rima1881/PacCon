@@ -47,3 +47,11 @@ int Location::getY(){
 Location::Cordinates Location::getCordinates(){
     return this -> data;
 }
+
+void Location::setX(int x){
+    data.x = x;
+}
+
+void Location::setY(int y){
+    data.y = y;
+}

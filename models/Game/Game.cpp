@@ -30,19 +30,30 @@ bool Game::LoadMap(std::string fileAddress){
 
     {
 
-
+        int y = 0,x;
         while (getline(mapFile,line)){
-
+            
+            x = 0;
             std::vector<Square *> row;
 
-            for(char c : line)
-                if(c == '#')
+            for(char c : line){
+
+                switch (c)
+                {
+                case '#':
                     row.push_back(new Wall());
-                else
+                    break;
+                case 'C':
+                    player.setLocation(y,x);
+                    row.push_back(new Room(&Game::player));
+                    break;
+                default:
                     row.push_back(new Room(nullptr));
-
+                }
+                x++;
+            }
             loadedMap.push_back(row);
-
+            y++;
         }
     }
 
@@ -67,27 +78,19 @@ void Game::Start(){
 }
 
 void Game::Render(){
-
-    system("cls");
     Game::map.Draw();
-
-
-
 }
 
 void Game::Interact(){
 
+
     char input;
 
-    while (true)
-    {
-        std::cin >> input;
+    std::cin >> input;
         
-        UserInput uInput(input);
+    UserInput uInput(input);
 
-        Game::player.Move(uInput.getDirction());
-
-    }
+    Game::player.Move(uInput.getDirction());
 
 }
 
@@ -98,6 +101,13 @@ bool Game::MoveAttempt(Location Loc,Direction d){
     if(map[destination] -> hasSpace()){
 
         Object* obj = map[Loc] -> getContent();
+
+        std::cout<<"\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!";
+        obj->Draw();
+        std::cout<<"\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!";
+
+
+        std::cout << "\n\n" << destination.getY() << "\t" << Loc.getY() << "\n\n";
 
         map[destination] -> setContent(obj);
 

@@ -8,6 +8,8 @@ class Object {
         virtual void Draw() = 0;
         virtual std::string getName() = 0;
         virtual Location getLocation() = 0;
+        virtual void setLocation(int x,int y) = 0;
+        virtual void setLocation(Location loc) = 0;
 };
 
 #endif
