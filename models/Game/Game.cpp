@@ -78,6 +78,7 @@ void Game::Start(){
 }
 
 void Game::Render(){
+    system("CLS");
     Game::map.Draw();
 }
 
@@ -101,13 +102,6 @@ bool Game::MoveAttempt(Location Loc,Direction d){
     if(map[destination] -> hasSpace()){
 
         Object* obj = map[Loc] -> getContent();
-
-        std::cout<<"\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!";
-        obj->Draw();
-        std::cout<<"\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!";
-
-
-        std::cout << "\n\n" << destination.getY() << "\t" << Loc.getY() << "\n\n";
 
         map[destination] -> setContent(obj);
 

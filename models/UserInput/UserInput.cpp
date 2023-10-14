@@ -1,9 +1,9 @@
 #include "./UserInput.hpp"
 
-
 UserInput::UserInput(Direction action , char c){
 
     this -> key = c;
+    this -> direction = action;
 
 }
 
@@ -11,10 +11,12 @@ UserInput::UserInput(char c){
 
     int i = 0;
 
+
     for(;i<KeyMap.size();i++)
         if(KeyMap[i].getKey() == c)
             break;
     
+
     this ->direction = KeyMap[i].getDirction();
     this ->key = c;
 

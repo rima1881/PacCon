@@ -15,7 +15,6 @@ void Player::Move(Direction d){
 
 
     if(Game::MoveAttempt(location,d)){
-        std::cout << "\n\nI am moving\n\n";
         location = location.Destination(d);
     }
 

@@ -20,16 +20,16 @@ Location Location::Destination(Direction dir){
     switch (dir)
     {
     case Direction::north:
-        newY--;
-        break;
-    case Direction::south:
-        newY++;
-        break;
-    case Direction::west:
         newX--;
         break;
-    case Direction::east:
+    case Direction::south:
         newX++;
+        break;
+    case Direction::west:
+        newY--;
+        break;
+    case Direction::east:
+        newY++;
     }
 
     return Location(newX,newY);
