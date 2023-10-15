@@ -2,13 +2,15 @@
 #define GAME_H
 #include "../Map/Map.hpp"
 #include "../Player/Player.hpp"
+#include "../Bot/Bot.hpp"
 #include <iostream>
+#include <vector>
 
 class Game
 {
 public:
 
-    
+    static std::vector<Bot> bots;
     static Map map;
     static Player player;
 

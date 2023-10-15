@@ -4,8 +4,7 @@
 class Hostile
 {
 public:
-    virtual int Attack() = 0;
-    virtual int getAttackRange() = 0;
+    virtual void Attack() = 0;
 };
 
 #endif

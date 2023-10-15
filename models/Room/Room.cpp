@@ -10,7 +10,7 @@ Room::Room(Object *c,Moving *m){
 
 void Room::Draw(){
 
-    if(nullptr != moving)
+    if(nullptr != moving) 
         moving -> Draw();
     else if(nullptr != content)
         content -> Draw();

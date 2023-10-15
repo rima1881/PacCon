@@ -12,8 +12,6 @@ class Player : public Mortal , public Moving {
 
         Player();
 
-        std::string getName();
-        void setName(std::string name);
 
         //Mortal
         virtual void GetDamage();
@@ -22,12 +20,14 @@ class Player : public Mortal , public Moving {
 
         //Moving
         virtual void Move(Direction d);
-
-        //Object
-        virtual void Draw();
+        virtual void setName(std::string name);
+        virtual std::string getName();
         virtual Location getLocation();
         virtual void setLocation(int x,int y);
         virtual void setLocation(Location loc);
+
+        //Object
+        virtual void Draw();
 
 
     private:
