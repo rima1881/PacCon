@@ -3,7 +3,7 @@
 
 
 void Wall::Draw(){
-    std::cout<<"#";
+    std::cout << "\033[1;34m#\033[0m";
 }
 
 
