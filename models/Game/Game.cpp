@@ -1,5 +1,6 @@
 #include "./Game.hpp"
 #include<string>
+#include <conio.h>
 #include "../Room/Room.hpp"
 #include "../Wall/Wall.hpp"
 #include "../UserInput/UserInput.hpp"
@@ -87,7 +88,7 @@ void Game::Interact(){
 
     char input;
 
-    std::cin >> input;
+    input = getch();
         
     UserInput uInput(input);
 
