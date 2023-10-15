@@ -19,7 +19,7 @@ void Room::Draw(){
 
 bool Room::hasSpace(){
 
-    return nullptr == content;
+    return nullptr == content || content->getName() == "point";
 
 }
 

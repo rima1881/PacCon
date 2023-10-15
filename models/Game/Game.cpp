@@ -1,6 +1,7 @@
 #include "./Game.hpp"
 #include<string>
 #include <conio.h>
+#include "../Point/Point.hpp"
 #include "../Room/Room.hpp"
 #include "../Wall/Wall.hpp"
 #include "../UserInput/UserInput.hpp"
@@ -49,7 +50,7 @@ bool Game::LoadMap(std::string fileAddress){
                     row.push_back(new Room(&Game::player));
                     break;
                 default:
-                    row.push_back(new Room(nullptr));
+                    row.push_back(new Room(new Point(y,x)));
                 }
                 x++;
             }
