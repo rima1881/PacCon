@@ -13,10 +13,9 @@ public:
     static std::vector<Bot> bots;
     static Map map;
     static Player player;
+    static std::string msg;
 
     static bool MoveAttempt(Location Loc,Direction d);
-    static void EatPoint(Location loc);
-
 
     static bool LoadMap(std::string fileAddress);
     static void Save();

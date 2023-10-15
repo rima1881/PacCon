@@ -3,23 +3,38 @@
 #include "../UserInput/UserInput.hpp"
 
 Player::Player(){
+    this -> life = 3;
+    this -> score = 0;
 }
 
 void Player::setName(std::string name){
     this -> name = name;
 }
 
+int Player::getScore(){
+    return this -> score;
+}
 
+void Player::addScore(){
+    score++;
+}
 
 void Player::Move(Direction d){
 
 
     if(Game::MoveAttempt(location,d)){
         location = location.Destination(d);
-        Game::EatPoint(location);
+        if(Game::map[location] -> getContent() != nullptr)
+            Player::EatPoint(location);
     }
 
 }
+
+void Player::EatPoint(Location loc){
+    Game::player.addScore();
+    Game::map[loc] -> setContent(nullptr);
+}
+
 
 void Player::Die(){
     std::cout << "player :" << this -> getName() << "die!!!";

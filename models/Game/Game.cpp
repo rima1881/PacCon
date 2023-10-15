@@ -87,6 +87,8 @@ void Game::Start(){
 void Game::Render(){
     system("CLS");
     Game::map.Draw();
+    std::cout << "\n" << "Life : " << Game::player.getLife();
+    std::cout << "\n" << "Score : " << Game::player.getScore() << "\n";
 
 }
 
@@ -121,11 +123,5 @@ bool Game::MoveAttempt(Location Loc,Direction d){
     }
 
     return false;
-
-}
-
-void Game::EatPoint(Location loc){
-
-    map[loc] -> setContent(nullptr);
 
 }

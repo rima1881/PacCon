@@ -12,6 +12,9 @@ class Player : public Mortal , public Moving {
 
         Player();
 
+        int getScore();
+        void addScore();
+        void EatPoint(Location loc);
 
         //Mortal
         virtual void GetDamage();
@@ -34,6 +37,7 @@ class Player : public Mortal , public Moving {
 
         std::string name;
         int life;
+        int score;
         Location location;
 
 };
