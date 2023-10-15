@@ -16,6 +16,7 @@ void Player::Move(Direction d){
 
     if(Game::MoveAttempt(location,d)){
         location = location.Destination(d);
+        Game::EatPoint(location);
     }
 
 }

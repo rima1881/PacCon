@@ -16,5 +16,13 @@ Object* Wall::getContent(){
 }
 
 void Wall::setContent(Object* obj){
-    throw -403;
+    throw 403;
+}
+
+void Wall::setMoving(Moving* mov){
+    throw 403;
+}
+
+Moving* Wall::getMoving(){
+    return nullptr;
 }

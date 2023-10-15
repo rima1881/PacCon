@@ -47,10 +47,10 @@ bool Game::LoadMap(std::string fileAddress){
                     break;
                 case 'C':
                     player.setLocation(y,x);
-                    row.push_back(new Room(&Game::player));
+                    row.push_back(new Room(nullptr,&Game::player));
                     break;
                 default:
-                    row.push_back(new Room(new Point(y,x)));
+                    row.push_back(new Room(new Point(y,x),nullptr));
                 }
                 x++;
             }
@@ -97,21 +97,29 @@ void Game::Interact(){
 
 }
 
+
+
 bool Game::MoveAttempt(Location Loc,Direction d){
 
     Location destination = Loc.Destination(d);
 
     if(map[destination] -> hasSpace()){
 
-        Object* obj = map[Loc] -> getContent();
+        Moving* obj = map[Loc] -> getMoving();
 
-        map[destination] -> setContent(obj);
+        map[destination] -> setMoving(obj);
+        map[Loc]->setMoving(nullptr);
 
-        map[Loc] -> setContent(nullptr);
 
         return true;
     }
 
     return false;
+
+}
+
+void Game::EatPoint(Location loc){
+
+    map[loc] -> setContent(nullptr);
 
 }

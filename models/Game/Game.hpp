@@ -13,6 +13,8 @@ public:
     static Player player;
 
     static bool MoveAttempt(Location Loc,Direction d);
+    static void EatPoint(Location loc);
+
 
     static bool LoadMap(std::string fileAddress);
     static void Save();
