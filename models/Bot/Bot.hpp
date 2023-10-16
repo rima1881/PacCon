@@ -14,7 +14,7 @@ private:
     static int num;
 
 public:
-    Bot(int x,int y,std::string name);
+    Bot(int x,int y);
 
     //hostile
     virtual void Attack();

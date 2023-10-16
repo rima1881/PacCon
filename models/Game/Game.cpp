@@ -12,7 +12,7 @@
 
 Player Game::player;
 Map Game::map;
-std::vector<Bot> Game::bots;
+std::vector<Bot*> Game::bots;
 
 void Game::NewGame(std::string name){
 
@@ -51,8 +51,8 @@ bool Game::LoadMap(std::string fileAddress){
                     row.push_back(new Room(nullptr,&Game::player));
                     break;
                 case 'B':
-                    Game::bots.push_back(Bot(y,x,"bot 1"));
-                    row.push_back(new Room(new Point(),&(Game::bots[Game::bots.size() - 1])));
+                    Game::bots.push_back(new Bot(y,x));
+                    row.push_back(new Room(new Point(),Game::bots[Game::bots.size() - 1]));
                     break;
                 default:
                     row.push_back(new Room(new Point(),nullptr));

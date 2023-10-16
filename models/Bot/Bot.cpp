@@ -1,14 +1,14 @@
 #include "./Bot.hpp"
 #include <iostream>
+#include <string>
 
 int Bot::num = 0;
 
-Bot::Bot(int x,int y,std::string name){
+Bot::Bot(int x,int y){
 
     this -> location.setX(x);
     this -> location.setY(y);
-    this -> name = name;
-    id = ++num;
+    this -> name = "bot " + std::to_string(++num);
 }
 
 void Bot::Draw(){

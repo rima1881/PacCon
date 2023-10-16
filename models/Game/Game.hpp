@@ -10,7 +10,7 @@ class Game
 {
 public:
 
-    static std::vector<Bot> bots;
+    static std::vector<Bot*> bots;
     static Map map;
     static Player player;
     static std::string msg;
