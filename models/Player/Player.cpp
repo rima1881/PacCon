@@ -3,7 +3,6 @@
 #include "../UserInput/UserInput.hpp"
 
 Player::Player(){
-    this -> life = 3;
     this -> score = 0;
 }
 
@@ -36,26 +35,12 @@ void Player::EatPoint(Location loc){
 }
 
 
-void Player::Die(){
-    std::cout << "player :" << this -> getName() << "die!!!";
-}
 
 std::string Player::getName(){
     return this -> name;
 }
 
-void Player::GetDamage(){
-    
-    this ->  life --;
 
-    if(this -> life < 1)
-        Player::Die();
-
-}
-
-int Player::getLife(){
-    return this -> life;
-}
 
 void Player::Draw(){
     std::cout << "\033[1;33mC\033[0m";

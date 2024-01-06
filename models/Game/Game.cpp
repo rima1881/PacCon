@@ -6,13 +6,11 @@
 #include "../Wall/Wall.hpp"
 #include "../UserInput/UserInput.hpp"
 #include <iostream>
-#include <fstream>
 #include <vector>
 #include<windows.h>
 
 Player Game::player;
 Map Game::map;
-std::vector<Bot*> Game::bots;
 
 void Game::NewGame(std::string name){
 
@@ -20,22 +18,39 @@ void Game::NewGame(std::string name){
 
 }
 
-bool Game::LoadMap(std::string fileAddress){
-
-
-
-    std::ifstream mapFile(fileAddress);
+bool Game::LoadMap(){
 
     std::string line;
-    int height=0;
 
     std::vector<std::vector<Square *>> loadedMap;
 
     {
 
+
+
+        std::string map[16] = {
+            "################",
+            "#              #",
+            "#              #",
+            "####      ######",
+            "#  #           #",
+            "#  ###    #    #",
+            "#  #      ##   #",
+            "#  #    C  #   #",
+            "#  # ######### #",
+            "#  #  #  #     #",
+            "#  #  #  # #####",
+            "#        #     #",
+            "## ####### #   #",
+            "#    #  #    # #",
+            "#  #      #    #",
+            "################"
+            };
+
         int y = 0,x;
-        while (getline(mapFile,line)){
+        while (y < 16){
             
+            line = map[y];
             x = 0;
             std::vector<Square *> row;
 
@@ -49,10 +64,6 @@ bool Game::LoadMap(std::string fileAddress){
                 case 'C':
                     player.setLocation(y,x);
                     row.push_back(new Room(nullptr,&Game::player));
-                    break;
-                case 'B':
-                    Game::bots.push_back(new Bot(y,x));
-                    row.push_back(new Room(new Point(),Game::bots[Game::bots.size() - 1]));
                     break;
                 default:
                     row.push_back(new Room(new Point(),nullptr));
@@ -87,7 +98,6 @@ void Game::Start(){
 void Game::Render(){
     system("CLS");
     Game::map.Draw();
-    std::cout << "\n" << "Life : " << Game::player.getLife();
     std::cout << "\n" << "Score : " << Game::player.getScore() << "\n";
 
 }

@@ -1,12 +1,11 @@
 #ifndef Player_H
 #define Player_H
 #include <iostream>
-#include "../interfaces/Mortal.hpp"
 #include "../interfaces/Moving.hpp"
 #include "../interfaces/Object.hpp"
 #include "../Location/Location.hpp"
 
-class Player : public Mortal , public Moving {
+class Player : public Moving {
 
     public:
 
@@ -16,10 +15,6 @@ class Player : public Mortal , public Moving {
         void addScore();
         void EatPoint(Location loc);
 
-        //Mortal
-        virtual void GetDamage();
-        virtual void Die();
-        virtual int getLife();
 
         //Moving
         virtual void Move(Direction d);
